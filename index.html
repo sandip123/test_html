@@ -1,10 +1,36 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-<script>
-setTimeout(function () {
-       window.location.href = "hathwayapp://login?draftId=1734434997074";
-   }, 1000); // 1 second delay   
-</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep Link Test</title>
+    <script>
+        function openApp() {
+            var appUrl = "hathwayapp://login?draftId=1734434997074"; // Your custom scheme
+            var playStoreUrl = "https://drive.google.com/drive/folders/0B4WtsR2bHdDybmF0bkFjc1I3S2M?resourcekey=0-t3Gm1-Rx5ppf4FWzbiECvQ"; // Replace with actual package name
+
+            var now = new Date().getTime();
+            var timeout = 2000; // 2 seconds delay
+
+            // Try opening the app
+            
+
+            // If the app is not installed, redirect to the Play Store after a delay
+            setTimeout(function () {
+                window.location.href = appUrl;
+                openappStore(timeout,playStoreUrl,now);
+            }, timeout);
+        }
+       function openappStore(timeout,playStoreUrl,now){
+            
+            var elapsed = new Date().getTime() - now;
+                if (elapsed < timeout + 100) { 
+                    window.location.href = playStoreUrl;
+                }
+        }
+    </script>
 </head>
-<body><h1>Test 11</h1></body>
+<body onload="openApp()">
+    <h1>Redirecting...</h1>
+</body>
 </html>
