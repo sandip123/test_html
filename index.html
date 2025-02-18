@@ -13,12 +13,12 @@
             var timeout = 2000; // 2 seconds delay
 
             // Try opening the app
-            
+            window.location.href = appUrl;
+                openappStore(timeout,playStoreUrl,now);
 
             // If the app is not installed, redirect to the Play Store after a delay
             setTimeout(function () {
-                window.location.href = appUrl;
-                openappStore(timeout,playStoreUrl,now);
+                
             }, timeout);
         }
        function openappStore(timeout,playStoreUrl,now){
