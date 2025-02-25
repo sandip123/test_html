@@ -22,10 +22,10 @@
             }, timeout);
         }
        function openappStore(timeout,playStoreUrl,now){
-            
+             window.location.href = playStoreUrl;
             var elapsed = new Date().getTime() - now;
                 if (elapsed < timeout + 100) { 
-                    window.location.href = playStoreUrl;
+                  //  window.location.href = playStoreUrl;
                 }
         }
     </script>
